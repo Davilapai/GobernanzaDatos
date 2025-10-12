@@ -1,144 +1,230 @@
-# Taller 2 – Calidad de los datos
+# **POLÍTICA DE GOBIERNO DE DATOS PARA PREVENIR RECURRENCIA**
 
-Pontificia Universidad Javeriana
+## Sistema de Medidores de Agua - Maddalena S.P.A
 
-Autores: Juan Pablo Baquero Velandia, David Alejandro Davila Guaranguay
+
+### **1. PROPÓSITO Y ALCANCE**
+
+El propósito de esta política es establecer los **lineamientos, responsabilidades y procedimientos** necesarios para garantizar la **calidad, consistencia, integridad y trazabilidad** de los datos generados por el sistema de medición de agua de **Maddalena S.P.A**.
+Esta política surge como respuesta a los hallazgos obtenidos en el proyecto de implementación del modelo predictivo, donde se identificaron **fallas recurrentes en la calidad de los datos** que afectaban la precisión de los resultados analíticos.
+
+Con estas medidas, se busca no solo **corregir errores existentes**, sino también **prevenir su recurrencia**, estableciendo un sistema robusto de **gobernanza de datos** que asegure decisiones confiables, sostenibles y basadas en evidencia.
+
+**Alcance:**
+Aplica a todos los conjuntos de datos relacionados con:
+
+* Mediciones y lecturas de contadores de agua.
+* Datos maestros de clientes y contratos.
+* Fuentes de datos operativas y analíticas derivadas del sistema de medición.
+
+
+### **2. ROLES Y RESPONSABILIDADES**
+
+La gobernanza de datos depende de una estructura clara de roles que asegure la **responsabilidad compartida** y la **rendición de cuentas** en cada etapa del ciclo de vida de los datos.
+
+#### **2.1 Dueño de Datos (Data Owner)**
+
+**Responsable:** Gerente de Operaciones
+**Rol estratégico:** Define la visión de calidad y las políticas de gestión de datos.
+
+**Funciones:**
+
+* Aprobar los estándares de calidad de datos.
+* Autorizar modificaciones en la estructura o flujo de datos.
+* Resolver conflictos o discrepancias entre áreas.
+* Supervisar la alineación entre los objetivos de negocio y la gestión de datos.
+
+El objetivo de este rol es asegurar que la **calidad de los datos esté alineada con las metas operativas**, evitando decisiones basadas en información defectuosa.
+
+#### **2.2 Steward de Datos (Data Steward)**
+
+**Responsable:** Supervisor de Lecturas
+**Rol operativo:** Garantiza el cumplimiento diario de los estándares de calidad.
+
+**Funciones:**
+
+* Monitorear y validar la calidad de los datos en tiempo real.
+* Implementar procesos correctivos inmediatos.
+* Coordinar la capacitación del personal que realiza las lecturas.
+* Registrar y documentar todas las acciones correctivas y sus resultados.
+
+El Data Steward es clave para **prevenir la recurrencia** de errores, al actuar como primer filtro operativo en la cadena de generación de datos.
+
+#### **2.3 Científico de Datos (Data Scientist)**
+
+**Responsable:** Equipo de Analytics
+**Rol analítico:** Diseña los mecanismos automáticos de control y mejora continua.
+
+**Funciones:**
+
+* Crear y actualizar los checks automáticos de calidad.
+* Desarrollar modelos predictivos e imputaciones para valores faltantes.
+* Implementar dashboards y reportes de monitorización.
+* Analizar tendencias y proponer estrategias preventivas.
+
+El equipo de análisis es fundamental para **traducir la calidad de datos en información accionable**, fortaleciendo la toma de decisiones informadas.
+
+
+### **3. ESTÁNDARES DE CALIDAD DE DATOS**
+
+El establecimiento de estándares formales permite definir **niveles mínimos aceptables de calidad** y medir de manera cuantitativa el desempeño del sistema.
+
+#### **3.1 Umbrales Mínimos de Aceptabilidad**
+
+| Dimensión    | Umbral Mínimo | Frecuencia de Medición |
+| ------------ | ------------- | ---------------------- |
+| Completitud  | 95%           | Diaria                 |
+| Exactitud    | 90%           | Semanal                |
+| Consistencia | 98%           | Mensual                |
+| Validez      | 99%           | En tiempo real         |
+| Unicidad     | 100%          | Diaria                 |
+
+Estos umbrales fueron definidos tras analizar los fallos más recurrentes (facilmente ubicables en el reporte EDA) y buscan asegurar que **los errores no se acumulen ni repitan** en el tiempo.
+
+#### **3.2 Estándares Específicos por Campo**
+
+**Water Meter ID:**
+
+* Formato: Alfanumérico sin espacios
+* Longitud: 6–12 caracteres
+* Unicidad: 100% garantizada
+
+**Reading Value:**
+
+* Rango: 0–10,000 m³
+* Precisión: 2 decimales
+* Valores negativos no permitidos
+
+**Reading Date:**
+
+* Formato: YYYY-MM-DD
+* No se permiten fechas futuras
+* Consistencia temporal entre lecturas consecutivas
+
+Estos criterios fueron definidos con base en los errores más frecuentes detectados, con el objetivo de **estandarizar la entrada de datos y minimizar desviaciones operativas**.
 
 ---
 
-## Cuestionario y entregables
+### **4. PROCESOS DE GESTIÓN DE CALIDAD**
 
-Este repositorio contiene el trabajo del Taller 2 de Curaduría y Gobernanza de Datos: análisis y plan de limpieza de calidad sobre los conjuntos de datos de medidores de agua.
+#### **4.1 Fase de Ingesta – Checks Automatizados**
 
-Estructura del entregable solicitado:
-
-- PARTE 1 - ANÁLISIS EXPLORATORIO DE DIMENSIONES DE CALIDAD
-  1. Realizar un análisis exploratorio completo que identifique y cuantifique problemas en las 7 dimensiones de calidad de datos a lo largo de todo el dataset.
-  2. Presentar un dashboard de métricas de calidad que incluya:
-     - Score general de calidad por dimensión.
-     - Escala de los cinco problemas más frecuentes (frecuencia y severidad).
-     - Estimación del impacto económico de los problemas identificados (metodología y supuestos).
-
-- PARTE 2 - PLAN DE LIMPIEZA DE DATOS Y GOBERNANZA
-  - Unificación e integración de los 10 conjuntos de datos.
-  - Diseñar e implementar un plan integral de limpieza y gobierno de datos que incluya las siguientes fases:
-
-    Fase de Diagnóstico:
-    - Priorizar problemas por impacto en negocio y frecuencia.
-    - Establecer umbrales de aceptabilidad para cada dimensión de calidad.
-    - Identificar las raíces de los problemas más críticos.
-
-    Fase de Corrección:
-    - Valores atípicos: proponer estrategia por variable (eliminación, imputación, capado) y justificarla.
-    - Datos faltantes: proponer imputación por mediana, moda, o modelos predictivos según el caso.
-    - Inconsistencias categóricas: desarrollar diccionarios de estandarización y reglas de mapeo.
-    - Duplicados: implementar función para detección y unificación (reconciliación de registros).
-
-    Fase de Prevención:
-    - Diseñar checks de calidad automatizados para la ingesta futura (validaciones, rangos, formatos).
-    - Proponer un sistema de scoring de calidad en tiempo real (cómo se calcula, umbrales y acciones).
-    - Establecer protocolos de actuación para cada tipo de problema (quién, cuándo, cómo).
-    - Definir métricas de monitorización continua y su periodicidad.
-
-- Entrega final requerida:
-  - Dataset limpio con documentación de transformaciones aplicadas (CSV/XLSX y un README de transformaciones).
-  - Código reproducible del proceso de limpieza (notebook(s) y/o scripts). Incluye instrucciones para ejecutar.
-  - Dashboard de monitorización de calidad (archivo HTML, notebook con visualizaciones o enlace a dashboard interactivo).
-  - Política de gobierno de datos para prevenir recurrencia (documento breve con roles, responsabilidades y flujos).
-
----
-
-## Guía práctica y estructura propuesta para el trabajo (reproducible)
-
-1. Preparación y organización
-   - Carpeta `Datos_MedidoresAgua/` contiene los archivos originales (txt/xlsx). Mantener un `raw/` con datos sin tocar.
-   - Carpeta `notebooks/` con notebooks ordenados: `01_exploracion.ipynb`, `02_limpieza.ipynb`, `03_dashboard.ipynb`.
-   - Carpeta `scripts/` para funciones reutilizables: limpieza, validación, scoring.
-   - Carpeta `outputs/` para datos producidos y reportes.
-
-2. PARTE 1 — Análisis exploratorio de calidad
-   - Cargar y unificar los 10 archivos (ver `notebooks/01_exploracion.ipynb`).
-   - Calcular métricas por dimensión (ejemplos):
-     - Integridad: % valores faltantes por columna / fila.
-     - Exactitud: validaciones de formato y rango (ej., IDs que no cumplen regex, lecturas negativas).
-     - Consistencia: valores contradictorios entre columnas (p. ej. fecha de lectura posterior a fecha previa).
-     - Uniformidad: variaciones en formatos/idiomas de categorías.
-     - Puntualidad: retrasos o inconsistencias en timestamps (si aplica).
-     - Conformidad: cumplimiento de esquemas (tipos de datos esperados).
-     - Disponibilidad: número de registros por periodo / cobertura.
-   - Generar tablas y gráficos por dimensión, y un score por dimensión — por ejemplo:
-     - score_dim = 100 - (peso_faltantes * %faltantes + peso_errores * %errores + ...)
-   - Identificar y listar los 5 problemas más frecuentes con frecuencia y costo estimado.
-
-3. PARTE 2 — Plan de limpieza y gobernanza
-   - Diagnóstico: tabla priorizada (problema, dimensión, frecuencia, impacto estimado, prioridad).
-   - Corrección: scripts/notebook que apliquen:
-     - Reglas de imputación (con explicación y pruebas A/B si aplica).
-     - Funciones de normalización de texto y diccionarios de mapeo (incluir `reemplazos` ejemplo en notebook).
-     - Detección y unificación de duplicados (matching por ID y heurística para conflictos).
-   - Prevención: conjunto de checks automatizados (ejemplos de implementaciones en `scripts/quality_checks.py`).
-
-4. Entregables y reproducibilidad
-   - `README.md` (este archivo) con instrucciones para reproducir.
-   - `notebooks/` con pasos claramente numerados para reproducir análisis y limpieza.
-   - `requirements.txt` con dependencias (pandas, numpy, ydata-profiling, plotly, etc.).
-   - Comandos para crear entorno e instalar dependencias:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-```
-
-5. Metodología para estimación de impacto económico (ejemplo)
-   - Definir hipótesis: por ejemplo, % lecturas erradas multiplicado por costo promedio por lectora/operación, o pérdidas por facturación estimada.
-   - Mostrar cálculo reproducible en `notebooks/impacto_economico.ipynb`.
-
----
-
-## Plantillas y fragmentos útiles (quick start)
-
-- Detección de nulos por columna:
+Los procesos de ingesta consideramos deberian de contar **validaciones automáticas** que garantizan la integridad de los datos desde su origen.
+Estas verificaciones detectan errores de formato, valores fuera de rango y categorías inválidas antes de su almacenamiento (bajo esto podria decirse que se orienta un poco más hacia la metodologia ETL)
 
 ```python
-print('\n===== FALTANTES =====')
-print(df.isna().sum())
+# Ejemplo de checks automaticos hechos por IA
+def validar_ingesta_datos(nuevos_datos):
+    """Validaciones en tiempo de ingesta"""
+    
+    checks = {
+        'completitud': nuevos_datos.isnull().sum().sum() == 0,
+        'formato_fechas': pd.to_datetime(nuevos_datos['Reading Date'], errors='coerce').notna().all(),
+        'rangos_numericos': (nuevos_datos['Reading Value'] >= 0).all() & 
+                           (nuevos_datos['Reading Value'] <= 10000).all(),
+        'categorias_validas': nuevos_datos['Type of Contract'].isin([
+            'residencial', 'comercial', 'industrial', 'other'
+        ]).all()
+    }
+    
+    return all(checks.values()), checks
 ```
 
-- Resumen de duplicados:
+#### **4.2 Sistema de Scoring en Tiempo Real**
 
-```python
-print('Duplicados exactos:', df.duplicated().sum())
-```
+Permite evaluar automaticamente el estado de la calidad de los datos a emdida que entran o se actualizan en el sistema, ante situaciones inesperadas surge un indicador que alerta al equipo ante degradaciones en la información.
 
-- Ejemplo de diccionario de reemplazo (usar y adaptar según columnas):
 
-```python
-reemplazos = {
-    'Reading Frequency': {'mensual': 'mensual', 'monthly': 'mensual', 'bimonthly': 'bimestral'},
-    # ...
-}
-```
+### **5. PROTOCOLOS DE ACTUACIÓN**
 
----
+#### **5.1 Flujo de Corrección de Datos**
 
-## Checklist de entrega
+1. **Detección:** Sistema identifica anomalía automáticamente.
+2. **Clasificación:** Se evalúa la severidad (Alta, Media, Baja).
+3. **Notificación:** Alerta al Data Steward responsable.
+4. **Corrección:** Aplicación del protocolo correspondiente.
+5. **Verificación:** Validación posterior por el Data Owner.
+6. **Documentación:** Registro en la bitácora de calidad.
 
-- [ ] Dataset original (`raw/`) incluido
-- [ ] Dataset limpio (`outputs/DatosLimpios.xlsx`) incluido
-- [ ] Notebooks reproducibles en `notebooks/`
-- [ ] Código reutilizable en `scripts/`
-- [ ] Dashboard (`reporte_eda.html` o similar)
-- [ ] Documentación de transformaciones (archivo `transformations.md` o similar)
-- [ ] Política de gobernanza (archivo `GOBERNANZA.md`)
+Este flujo asegura que **cada error sea tratado y documentado**, garantizando trazabilidad y mejora continua.
 
----
+#### **5.2 Estrategias por Tipo de Problema**
 
-## Notas finales
+**Valores Nulos:**
 
-- Mantener trazabilidad: cada transformación debe ir acompañada de una breve justificación y una función idempotente (si se ejecuta dos veces, el resultado no cambia).
-- Priorizar la creación de tests unitarios para las funciones de curación de datos más críticas.
+* <5% → Imputación por mediana
+* 5–20% → Modelo predictivo de imputación
+* -20% → Recolección manual
 
----
+**Outliers:**
 
-Fecha: 2025-10-11
+* Detección de valores atipicos usando cuartiles (método IQR)
+* Verificación con el Data Owner
+* Ajuste de valores extremos a limites permitidos (esto se conoce como capado, su implementacion requiere de extensa revision)
+
+**Inconsistencias Categóricas:**
+
+* Uso de diccionario de estandarización
+* Corrección automática mediante mapeo
+* Registro de cambios aplicados
+
+
+
+### **6. MONITORIZACIÓN Y REPORTING**
+
+#### **6.1 Dashboard de Monitorización**
+
+Implementado con **YData**, el dashboard permite visualizar:
+
+* Score general de calidad.
+* Tendencias históricas.
+* Alertas proactivas.
+* Métricas por dimensión.
+
+#### **6.2 Reportes Periódicos**
+
+* **Diario:** Score de calidad y alertas críticas.
+* **Semanal:** Tendencias y problemas recurrentes.
+* **Mensual:** Reporte ejecutivo con recomendaciones.
+
+#### **6.3 Métricas de Monitorización Continua**
+
+* Tiempo de respuesta de alertas: ≤ 2 horas
+* Exactitud de las lecturas: ≥ 98%
+* Completitud de los datos: ≥ 95%
+* Satisfaccion de los usuarios: ≥ 4/5
+
+### **7. GARANTÍAS DE CUMPLIMIENTO**
+
+#### **7.1 Auditorías Periódicas**
+
+* Trimestral: Auditoría interna de procesos.
+* Semestral: Auditoría externa.
+* Anual: Revisión integral del sistema de calidad.
+
+#### **7.2 Capacitación Continua**
+
+* Mensual: Formación en buenas prácticas de lectura.
+* Trimestral: Actualización de procesos de control.
+* Anual: Certificación del equipo de datos.
+
+#### **7.3 Mejora Continua**
+
+* Revisión mensual de métricas.
+* Ajuste trimestral de umbrales.
+* Incorporación anual de innovaciones tecnológicas.
+
+### **8. DOCUMENTACIÓN Y VERSIONAMIENTO**
+
+#### **8.1 Documentación Obligatoria**
+
+* Diccionario de datos actualizado.
+* Registro de cambios y excepciones.
+* Bitácora de correcciones.
+* Reportes de auditoría.
+
+#### **8.2 Control de Versiones**
+
+* Versionado semántico de estándares.
+* Historial de modificaciones.
+* Backups automáticos de configuraciones.
