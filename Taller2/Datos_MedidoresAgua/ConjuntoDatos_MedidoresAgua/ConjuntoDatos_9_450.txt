@@ -1,0 +1,51 @@
+No,Water Meter ID,Reading ID,Reading Value,Reading Date,Previous Reading Value,Previous Reading Date,Reading Frequency,Reader ID,Type of Contract,Reading Validity,Certification on the ERP,Final Billing,Reason for Reading
+401,IT-WM-397,READ-401,999999.99,15/03/2024,120.30,15/02/2024,Monthly,READER-01,Residential,Invalid,Yes,0.00,Meter Malfunction
+402,IT-WM-398,READ-402,-450.25,16/03/2024,75.20,16/02/2024,Monthly,READER-02,Commercial,Invalid,Yes,0.00,Reverse Flow
+403,IT-WM-399,READ-403,0.00,17/03/2024,210.45,17/02/2024,Monthly,READER-03,Industrial,Valid,No,0.00,Zero Consumption
+404,IT-WM-400,READ-404,320.10,18/03/2024,295.80,18/02/2024,Bimonthly,READER-01,Residential,Valid,Sì,156.30,Routine
+405,IT-WM-401,READ-405,170.25,15/04/2024,145.50,15/03/2024,Monthly,READER-02,Residential,Valid,YES,145.50,Routine
+406,IT-WM-402,READ-406,5000000.00,19/03/2024,55.30,19/02/2024,Monthly,READER-04,Residential,Invalid,No,0.00,Extreme Outlier
+407,IT-WM-403,READ-407,-123.45,20/03/2024,450.25,20/02/2024,Bimonthly,READER-03,Commercial,Invalid,Yes,0.00,Negative Reading
+408,IT-WM-404,READ-408,123.45,21/03/2024,110.75,21/02/2024,Monthly,READER-01,Residential,Valid,Y,98.70,Routine
+409,IT-WM-405,READ-409,250000.75,22/03/2024,890.40,22/02/2024,Monthly,READER-05,Industrial,Suspicious,Yes,0.00,Data Error
+410,IT-WM-406,READ-410,95.20,16/04/2024,89.75,16/03/2024,Monthly,READER-02,Commercial,Valid,Yes,95.20,Routine
+411,IT-WM-407,READ-411,-999.99,23/03/2024,45.30,23/02/2024,Monthly,READER-04,Residential,Invalid,NO,0.00,System Error
+412,IT-WM-408,READ-412,234.56,24/03/2024,215.90,24/02/2024,Monthly,READER-01,Residential,Valid,Yes,98.25,Routine
+413,IT-WM-409,READ-413,0.00,25/03/2024,0.00,25/02/2024,Monthly,READER-03,Commercial,Valid,Yes,0.00,Property Vacant
+414,IT-WM-410,READ-414,750000.00,26/03/2024,420.15,26/02/2024,Bimonthly,READER-05,Industrial,Invalid,Yes,0.00,Impossible Value
+415,IT-WM-411,READ-415,345.60,18/04/2024,320.10,18/03/2024,Bimonthly,READER-01,Residential,Valid,Si,123.15,Routine
+416,IT-WM-412,READ-416,-75.30,27/03/2024,65.45,27/02/2024,Monthly,READER-02,Residential,Invalid,Yes,0.00,Backflow
+417,IT-WM-413,READ-417,1234.56,28/03/2024,1150.20,28/02/2024,Monthly,READER-04,Industrial,Valid,Y,450.67,Routine
+418,IT-WM-414,READ-418,1000000.50,29/03/2024,150.75,29/02/2024,Monthly,READER-03,Residential,Invalid,Yes,0.00,Overflow
+419,IT-WM-415,READ-419,89.45,30/03/2024,78.90,30/02/2024,Monthly,READER-01,Residential,Valid,Yes,89.45,Routine
+420,IT-WM-416,READ-420,-200.00,31/03/2024,510.25,31/02/2024,Monthly,READER-05,Commercial,Invalid,Yes,0.00,Reverse
+421,IT-WM-417,READ-421,123.00,01/04/2024,115.80,01/03/2024,Monthly,READER-02,Residential,Valid,Yes,123.00,Routine
+422,IT-WM-418,READ-422,9999999.99,02/04/2024,745.60,02/03/2024,Bimonthly,READER-04,Industrial,Invalid,Yes,0.00,Maximum Value
+423,IT-WM-419,READ-423,234.00,03/04/2024,210.45,03/03/2024,Monthly,READER-01,Residential,Valid,Yes,234.00,Routine
+424,IT-WM-420,READ-424,-1500.75,17/04/2024,210.45,17/03/2024,Monthly,READER-03,Industrial,Invalid,Yes,0.00,Extreme Negative
+425,IT-WM-421,READ-425,456.23,04/04/2024,430.10,04/03/2024,Monthly,READER-05,Commercial,Valid,Yes,456.23,Routine
+426,IT-WM-422,READ-426,0.00,05/04/2024,0.00,05/03/2024,Monthly,READER-02,Residential,Valid,Yes,0.00,No Consumption
+427,IT-WM-423,READ-427,500000.25,06/04/2024,645.20,06/03/2024,Monthly,READER-04,Industrial,Invalid,Yes,0.00,Abnormal Spike
+428,IT-WM-424,READ-428,890.12,07/04/2024,856.78,07/03/2024,Bimonthly,READER-01,Commercial,Valid,Yes,890.12,Routine
+429,IT-WM-425,READ-429,-89.30,08/04/2024,115.45,08/03/2024,Monthly,READER-03,Residential,Invalid,Yes,0.00,Impossible
+430,IT-WM-426,READ-430,345.67,09/04/2024,320.89,09/03/2024,Monthly,READER-05,Residential,Valid,Yes,345.67,Routine
+431,IT-WM-427,READ-431,2500000.00,10/04/2024,534.12,10/03/2024,Monthly,READER-02,Commercial,Invalid,Yes,0.00,Out of Range
+432,IT-WM-428,READ-432,789.01,11/04/2024,756.34,11/03/2024,Monthly,READER-04,Industrial,Valid,Yes,789.01,Routine
+433,IT-WM-429,READ-433,-500.00,12/04/2024,867.45,12/03/2024,Bimonthly,READER-01,Residential,Invalid,Yes,0.00,Negative
+434,IT-WM-430,READ-434,234.56,13/04/2024,223.78,13/03/2024,Monthly,READER-03,Residential,Valid,Yes,234.56,Routine
+435,IT-WM-431,READ-435,100000.75,14/04/2024,445.67,14/03/2024,Monthly,READER-05,Commercial,Invalid,Yes,0.00,Data Corruption
+436,IT-WM-432,READ-436,678.90,15/04/2024,667.89,15/03/2024,Monthly,READER-02,Industrial,Valid,Yes,678.90,Routine
+437,IT-WM-433,READ-437,-999.50,16/04/2024,889.01,16/03/2024,Monthly,READER-04,Residential,Invalid,Yes,0.00,Error
+438,IT-WM-434,READ-438,123.45,17/04/2024,111.23,17/03/2024,Bimonthly,READER-01,Residential,Valid,Yes,123.45,Routine
+439,IT-WM-435,READ-439,750000.25,18/04/2024,333.45,18/03/2024,Monthly,READER-03,Commercial,Invalid,Yes,0.00,Impossible Reading
+440,IT-WM-436,READ-440,567.89,19/04/2024,555.67,19/03/2024,Monthly,READER-05,Industrial,Valid,Yes,567.89,Routine
+441,IT-WM-437,READ-441,-250.00,20/04/2024,777.89,20/03/2024,Monthly,READER-02,Residential,Invalid,Yes,0.00,Backward Flow
+442,IT-WM-438,READ-442,901.23,21/04/2024,899.01,21/03/2024,Monthly,READER-04,Residential,Valid,Yes,901.23,Routine
+443,IT-WM-439,READ-443,999999.50,22/04/2024,111.23,22/03/2024,Bimonthly,READER-01,Commercial,Invalid,Yes,0.00,Overflow Error
+444,IT-WM-440,READ-444,234.56,23/04/2024,222.34,23/03/2024,Monthly,READER-03,Industrial,Valid,Yes,234.56,Routine
+445,IT-WM-441,READ-445,-1000.00,24/04/2024,444.56,24/03/2024,Monthly,READER-05,Residential,Invalid,Yes,0.00,Reverse Measurement
+446,IT-WM-442,READ-446,678.90,25/04/2024,666.78,25/03/2024,Monthly,READER-02,Residential,Valid,Yes,678.90,Routine
+447,IT-WM-443,READ-447,500000.75,26/04/2024,888.90,26/03/2024,Monthly,READER-04,Commercial,Invalid,Yes,0.00,Extreme Value
+448,IT-WM-444,READ-448,123.45,27/04/2024,111.23,27/03/2024,Bimonthly,READER-01,Industrial,Valid,Yes,123.45,Routine
+449,IT-WM-445,READ-449,-750.25,28/04/2024,222.34,28/03/2024,Monthly,READER-03,Residential,Invalid,Yes,0.00,Negative Outlier
+450,IT-WM-446,READ-450,456.78,29/04/2024,444.56,29/03/2024,Monthly,READER-05,Residential,Valid,Yes,456.78,Routine
